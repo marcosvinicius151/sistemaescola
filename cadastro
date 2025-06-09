@@ -1,0 +1,16 @@
+alunos= {}
+
+def cadastrar():
+    mat = input("matricular:")
+    nome = input("nome:")
+    alunos[mat] = {"nome": nome, "notas": []}
+    print("Aluno cadastrado")
+
+def lançarnota ():
+    mat = input("matricula:")
+    if mat in alunos:
+        nota = float(input("nota:"))
+        alunos[mat]["notas"].append(nota)
+        print("nota lançada")
+    else:
+        print("aluno nao registrado")
