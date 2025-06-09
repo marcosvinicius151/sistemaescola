@@ -14,3 +14,29 @@ def lançarnota ():
         print("nota lançada")
     else:
         print("aluno nao registrado")
+
+def boletim():
+    for mat, dados in alunos.items():
+        notas = dados["notas"]
+        media = sum(notas) / len(notas) if notas else 0
+        situacao = "Aprovado" if media >= 7 else "Reprovado"
+        print(f"\n{dados['nome']} ({mat})")
+        print(f"Notas: {notas}")
+        print(f"Média: {media:.1f} - {situacao}")
+
+def menu():
+    while True:
+        print("\n1. Cadastrar aluno\n2. Lançar nota\n3. Ver boletim\n0. Sair")
+        op = input("Opção: ")
+        if op == "1":
+            cadastrar()
+        elif op == "2":
+            lancar_nota()
+        elif op == "3":
+            boletim()
+        elif op == "0":
+            break
+        else:
+            print("Opção inválida.")
+
+menu()
